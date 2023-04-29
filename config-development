@@ -1,0 +1,15 @@
+# load base config cf.: /etc/sway/config
+include ~/.config/sway/base.conf
+
+#################################
+# Custom config extensions
+#################################
+
+# include: custom base configurations
+include ~/.config/sway/config-custom-base.conf
+
+# include: open windows - typescript development
+include ~/.config/sway/open-windows-typescript-development.conf
+
+# include: focus on first screen
+include ~/.config/sway/focus-first-screen.conf
