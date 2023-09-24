@@ -9,7 +9,7 @@ include ~/.config/sway/base.conf
 include ~/.config/sway/config-custom-base.conf
 
 # include monitor settings regarding location of screens and their resolution
-include ~/.config/sway/monitor-laptop.conf
+include ~/.config/sway/monitor-second-desktop.conf
 
 # include: focus on first screen
 include ~/.config/sway/focus-first-screen.conf
