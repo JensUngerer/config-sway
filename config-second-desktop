@@ -8,6 +8,9 @@ include ~/.config/sway/base.conf
 # include: custom base configurations
 include ~/.config/sway/config-custom-base.conf
 
+# include colors of background and status bar plus updating status bar 
+include ~/.config/sway/status-bar-and-colors-second.conf
+
 # include monitor settings regarding location of screens and their resolution
 include ~/.config/sway/monitor-second-desktop.conf
 
