@@ -33,4 +33,4 @@ battery_info=$(upower --show-info /org/freedesktop/UPower/devices/battery_CMB1 |
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|
 # echo $uptime_formatted ↑ $linux_version 🐧 $battery_status 🔋 $date_formatted
-echo $battery_info ' ' $date_formatted
+echo $battery_info ' ' $uptime_formatted ' ' $date_formatted
