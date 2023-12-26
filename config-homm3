@@ -24,6 +24,6 @@ include ~/.config/sway/focus-first-screen.conf
 # MR https://github.com/swaywm/sway/pull/6249
 # exec nm-applet --indicator
 
-exec open-homm3-first-workspace.sh;
 exec swaymsg "workspace 2; exec pavucontrol;";
-
+exec swaymsg "workspace 2; exec chromium;";
+exec open-homm3-first-workspace.sh;
