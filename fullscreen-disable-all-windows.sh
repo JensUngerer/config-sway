@@ -38,7 +38,7 @@
 # echo $abc
 
 # | sed 's/}/n /'
-names=$(swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.pid and .visible) | {id}') 
+#names=$(swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.pid and .visible) | {id}') 
 # code_val=$(jq --argjson '.name' <<< "$names")
 # code_val= names | jq --argjson name
 # echo $code_val
@@ -46,6 +46,10 @@ names=$(swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.pid and
 # keyValues=$(jq -n $names) | jq .name
 # echo jq '.name' <(echo "$names")
 
+names=$(swaymsg -t get_tree | jq --argjson visible "$(swaymsg -t get_workspaces | jq -c '[.[] | select(.visible) | .id]')" '.. | (.nodes? // empty)[] | select(.type == "workspace" and .id == $visible[]) | .. | (.nodes? // empty)[] | select(.pid)' | jq {id})
+
+
+# echo $names
 # https://stackoverflow.com/questions/47105490/can-i-pass-a-string-variable-to-jq-not-the-file
 idsWhitespace=$(jq '.id' <<< $names)
 for s in $idsWhitespace
