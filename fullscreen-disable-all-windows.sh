@@ -46,16 +46,41 @@
 # keyValues=$(jq -n $names) | jq .name
 # echo jq '.name' <(echo "$names")
 
-names=$(swaymsg -t get_tree | jq --argjson visible "$(swaymsg -t get_workspaces | jq -c '[.[] | select(.visible) | .id]')" '.. | (.nodes? // empty)[] | select(.type == "workspace" and .id == $visible[]) | .. | (.nodes? // empty)[] | select(.pid)' | jq {id})
+#names=$(swaymsg -t get_tree | jq --argjson visible "$(swaymsg -t get_workspaces | jq -c '[.[] | select(.visible) | .id]')" '.. | (.nodes? // empty)[] | select(.type == "workspace" and .id == $visible[]) | .. | (.nodes? // empty)[] | select(.pid)' | jq {id})
 
 
 # echo $names
 # https://stackoverflow.com/questions/47105490/can-i-pass-a-string-variable-to-jq-not-the-file
-idsWhitespace=$(jq '.id' <<< $names)
-for s in $idsWhitespace
-do
-  swaymsg "[con_id="$((s))"] fullscreen disable"
+
+
+swaymsg -t get_tree > ./window-tree.json
+# | $(jq -r '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]') # | .[] | .nodes | . []") # | $(select(.nodes != null) | .nodes | .[]) | $(select(.name != null)) | "\(.id?) \(.name?)""
+#echo $variable
+# readarray -t windows < <($variable | jq -c '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]')
+readarray -t windows < <(jq -c '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]' ./window-tree.json)
+# foundWindows=$(jq -p $windows[0])
+for win in $(echo "${windows}" | jq -r '.[]'); do
+  echo $win
+  swaymsg "[instance="$win"] fullscreen disable"
+  #   _jq() {
+  #    echo ${row} | base64 --decode | jq -r ${1}
+  #   }
+  #  echo $(_jq '.name')
 done
+# for w in $windows
+# do
+# echo $w
+# end
+
+#  echo $names
+ #| $(jq) -r '.nodes | .[] | .nodes | . []' # | $(select(.nodes != null)) | .nodes | .[] | select(.name != null) | "\(.id?) \(.name?)"')
+
+# idsWhitespace=$(jq '.id' <<< $names)
+# for s in $foundWindows
+# do
+#   echo $s
+#   # swaymsg "[con_id="$((s))"] fullscreen disable"
+# done
 # echo $idsWhitespace
 # theArray={`echo $names`}
 # echo $theArray
