@@ -53,11 +53,11 @@
 # https://stackoverflow.com/questions/47105490/can-i-pass-a-string-variable-to-jq-not-the-file
 
 
-swaymsg -t get_tree > ./window-tree.json
+# swaymsg -t get_tree > ./window-tree.json
 # | $(jq -r '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]') # | .[] | .nodes | . []") # | $(select(.nodes != null) | .nodes | .[]) | $(select(.name != null)) | "\(.id?) \(.name?)""
 #echo $variable
 # readarray -t windows < <($variable | jq -c '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]')
-readarray -t windows < <(jq -c '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]' ./window-tree.json)
+readarray -t windows < <(swaymsg -t get_tree | jq -c '[.. | .floating_nodes?, .nodes? | .[]? | .nodes? | .[]? | select(.window!=null) | .window_properties | .instance ]')
 # foundWindows=$(jq -p $windows[0])
 for win in $(echo "${windows}" | jq -r '.[]'); do
   echo $win
