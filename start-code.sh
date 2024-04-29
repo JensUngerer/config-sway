@@ -1,5 +1,5 @@
 #!/bin/bash
-swaymsg "exec code"
+swaymsg "workspace 1; exec code"
 sleep 1;
 . ~/.config/sway/fullscreen-disable-all-windows.sh;
 sleep 1;
