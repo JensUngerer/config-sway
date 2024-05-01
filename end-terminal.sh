@@ -1,0 +1,1 @@
+swaymsg '[app_id="kitty"] kill'
