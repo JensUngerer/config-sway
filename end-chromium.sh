@@ -1,1 +1,1 @@
-swaymsg '[instance="chromium"] kill'
+swaymsg '[instance="$SWAY_BROWSER"] kill'

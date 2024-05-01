@@ -25,5 +25,5 @@ include ~/.config/sway/focus-first-screen.conf
 # exec nm-applet --indicator
 
 exec swaymsg "workspace 2; exec pavucontrol;";
-exec swaymsg "workspace 2; exec chromium;";
+exec swaymsg "workspace 2; exec $SWAY_BROWSER;";
 exec open-homm3-first-workspace.sh;
