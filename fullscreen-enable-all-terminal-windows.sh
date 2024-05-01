@@ -1,4 +1,10 @@
 #!/bin/bash
 . ~/.config/sway/fullscreen-disable-all-windows.sh;
 sleep 1;
-swaymsg '[app_id="$SWAY_TERMINAL"] fullscreen enable'
+swaymessage='[app_id="';
+swaymessage+=$SWAY_TERMINAL;
+swaymessage+="\"] fullscreen enable;";
+# DEBUGGING:
+# echo $swaymessage;
+
+swaymsg $swaymessage;

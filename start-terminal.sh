@@ -1,5 +1,8 @@
 #!/bin/bash
-swaymsg "exec $SWAY_TERMINAL ~/"
+swaymessage="exec ";
+swaymessage+=$SWAY_TERMINAL;
+swaymessage+=" ~/;";
+swaymsg $swaymessage;
 sleep 1;
 . ~/.config/sway/fullscreen-disable-all-windows.sh;
 sleep 1;
