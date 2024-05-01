@@ -1,0 +1,1 @@
+swaymsg "[instance="code"] kill"
