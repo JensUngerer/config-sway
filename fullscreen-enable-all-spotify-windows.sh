@@ -1,4 +1,6 @@
 #!/bin/bash
 . ~/.config/sway/fullscreen-disable-all-windows.sh;
 sleep 1;
-swaymsg '[instance="spotify"] fullscreen enable'
+swaymessage=$(~/.config/sway/music-instance-id.sh);
+swaymessage+=" fullscreen enable"; 
+swaymsg $swaymessage;
