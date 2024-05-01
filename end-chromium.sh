@@ -1,1 +1,6 @@
-swaymsg '[instance="$SWAY_BROWSER"] kill'
+swaymessage=$(~/.config/sway/web-browser-instance-id.sh);
+swaymessage+=' kill'
+# DEBUGGING:
+# echo $swaymessage
+
+swaymsg $swaymessage
