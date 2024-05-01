@@ -1,1 +1,1 @@
-swaymsg "[instance="code"] kill"
+swaymsg '[instance="code"] kill'
