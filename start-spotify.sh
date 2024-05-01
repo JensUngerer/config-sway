@@ -1,5 +1,10 @@
 #!/bin/bash
-swaymsg "workspace 2; exec spotify"
+swaymessage="workspace 2; exec ";
+swaymessage+=$SWAY_MUSIC;
+# DEBUGGING:
+# echo $swaymessage;
+
+swaymsg $swaymessage;
 sleep 1;
 . ~/.config/sway/fullscreen-disable-all-windows.sh;
 sleep 1;
