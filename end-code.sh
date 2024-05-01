@@ -1,1 +1,3 @@
-swaymsg '[instance="code"] kill'
+swaymessage=$(~/.config/sway/ide-instance.sh);
+swaymessage+=" kill";
+swaymsg $swaymessage;
