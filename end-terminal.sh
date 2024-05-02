@@ -1,1 +1,1 @@
-swaymsg '[app_id="$SWAY_TERMINAL"] kill'
+swaymsg '[app_id="kitty"] kill'

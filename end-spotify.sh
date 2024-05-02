@@ -1,6 +1,7 @@
-swaymessage=$(~/.config/sway/music-instance-id.sh);
-swaymessage+=" kill;";
-# DEBUGGING:
-# echo $swaymessage;
+# swaymessage=$(~/.config/sway/music-instance-id.sh);
+# swaymessage+=" kill;";
+# # DEBUGGING:
+# # echo $swaymessage;
 
-swaymsg $swaymessage;
+# swaymsg $swaymessage;
+swaymsg '[instance="spotify"] kill'
