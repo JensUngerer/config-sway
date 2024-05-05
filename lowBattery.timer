@@ -1,0 +1,9 @@
+[Unit]
+Description=lowBattery
+
+[Timer]
+OnUnitActiveSec=1s
+OnBootSec=1s
+
+[Install]
+WantedBy=timers.target

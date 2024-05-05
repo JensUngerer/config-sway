@@ -1,0 +1,9 @@
+[Unit]
+Description=lowBatteryService
+
+[Service]
+Type=oneshot
+StandardOutput=syslog+console
+StandardError=syslog+console
+ExecStart=/bin/bash /home/ju/.config/sway/play-battery-low-sound.sh
+
