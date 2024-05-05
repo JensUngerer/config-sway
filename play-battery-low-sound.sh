@@ -18,7 +18,7 @@ percentage=$(expr $percentage)
 # DEbUGGING:
 # echo $isSwayRunning
 # echo $percentage;
-if [ $percentage -lt 99 ] && [ $isSwayRunning == true ];
+if [ $percentage -lt 80 ] && [ $isSwayRunning == true ];
 then
 # mp3 taken from public domain: cf.: https://github.com/201dreamers/sway-config/tree/master/.config/sway/modules/critical_battery_beeper
 mpg123 -q ~/.config/sway/critical_battery.mp3;
