@@ -1,5 +1,5 @@
 #!/bin/bash
-swaymessage="workspace 1; exec ";
+swaymessage="exec ";
 swaymessage+=$SWAY_IDE;
 # DEBUGGING:
 # echo $swaymessage;
