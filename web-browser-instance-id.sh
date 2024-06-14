@@ -1,6 +1,6 @@
 #!/bin/bash
 
-swaymessagestr='[instance="';
+swaymessagestr='[app_id="';
 swaymessagestr+=$SWAY_BROWSER;
 swaymessagestr+='"]'
 
