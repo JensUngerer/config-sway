@@ -5,7 +5,7 @@ swaymessage+=$SWAY_MUSIC;
 # echo $swaymessage;
 
 swaymsg $swaymessage;
-sleep 1;
-. ~/.config/sway/fullscreen-disable-all-windows.sh;
-sleep 1;
-. ~/.config/sway/fullscreen-enable-all-spotify-windows.sh;
+# sleep 1;
+# . ~/.config/sway/fullscreen-disable-all-windows.sh;
+# sleep 1;
+# . ~/.config/sway/fullscreen-enable-all-spotify-windows.sh;
