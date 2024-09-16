@@ -1,0 +1,26 @@
+# load base config cf.: /etc/sway/config
+include ~/.config/sway/base.conf
+
+#################################
+# Custom config extensions
+#################################
+
+# include: custom base configurations
+include ~/.config/sway/config-custom-base.conf
+
+# include colors of background and status bar plus updating status bar 
+include ~/.config/sway/status-bar-and-colors-first-work-laptop.conf
+
+# include monitor settings regarding location of screens and their resolution
+# include ~/.config/sway/monitor-laptop.conf
+
+# include: focus on first screen
+include ~/.config/sway/focus-first-screen.conf
+
+# cf.: https://www.reddit.com/r/swaywm/comments/wsa9rg/binding_keys_for_specific_keyboard_layout/
+# bindsym --to-code $mod+Shift+F2 exec /bin/sh -c 'exec swaymsg exit & sway --config /home/jens/.config/sway/config-time-tracker-dev'
+
+# will be fixed with
+# MR https://github.com/swaywm/sway/pull/6249
+# exec nm-applet --indicator
+
